@@ -17,13 +17,13 @@ async def get_data():
         async with session.get(url, headers=headers, params=params) as response:
             getting_data = await response.json()
             
-            for name, info in getting_data["data"].items():
-                name = info["name"]
-                symbol = info["symbol"]
-                price = info["quote"]["USDT"]["price"]
-                change_24h = info["quote"]["USDT"]["percent_change_24h"]
-                change_7d = info["quote"]["USDT"]["percent_change_7d"]
-                volume_24h = info["quote"]["USDT"]["volume_24h"]
+            for name, information in getting_data["data"].items():
+                name = information["name"]
+                symbol = information["symbol"]
+                price = information["quote"]["USDT"]["price"]
+                change_24h = information["quote"]["USDT"]["percent_change_24h"]
+                change_7d = information["quote"]["USDT"]["percent_change_7d"]
+                volume_24h = information["quote"]["USDT"]["volume_24h"]
     
                 print(f"{name} | {symbol} | {price:.2f} USDT | Change for 24h : {change_24h:.2f}% | Change for 7d : {change_7d:.2f}% | Volume for 24h : {volume_24h:.2f} USDT")
 
