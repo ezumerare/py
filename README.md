@@ -1,2 +1,2 @@
-# web3.py
-im writing something for evm
+here iam learning Python and constantly practicing,
+ctively uploading what iam doing
