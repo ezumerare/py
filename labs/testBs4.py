@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import asyncio
 import requests
 import logging
 logging.basicConfig(level=logging.INFO, format="%(message)s")
@@ -9,7 +8,7 @@ cmc_connect = requests.get(cmc)
 logging.info(f"cmc - {cmc_connect.status_code}")
 
 class CoinMarketCap():
-    async def pars_cmc(self, html):
+    def pars_cmc(self, html):
         cmc_view = BeautifulSoup(html, "html.parser")
         names = cmc_view.find_all("p", class_="sc-65e7f566-0 iPbTJf coin-item-name")
         symbols = cmc_view.find_all("p", class_="sc-65e7f566-0 byYAWx coin-item-symbol")
@@ -24,6 +23,6 @@ class CoinMarketCap():
 def calls():
     html = cmc_connect.text
     obj = CoinMarketCap()
-    asyncio.run(obj.pars_cmc(html))
+    obj.pars_cmc(html)
     
 calls()
