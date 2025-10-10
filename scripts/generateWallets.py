@@ -14,6 +14,7 @@ cursor.execute('create table if not exists Wallets (address TEXT, key TEXT)')
 def save(address, key):
     cursor.execute('insert into Wallets (address, key) values (?, ?)' , (address, key))
     connect.commit()
+    connect.close()
     
 def generate():
     for _ in range(50):
