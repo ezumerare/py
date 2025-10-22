@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 # register the important data
 log = logging.info
-api_key = '8484999536:AAGKfge71XHjlH4Z-ndfggXMEVYmrn9LTtw'
-gemini_api_key = 'AIzaSyAGV1VhyIIf7EPlh4hETwehGELvtOvsmro'
+api_key = 'your tg token'
+gemini_api_key = 'your token api gemini'
 client = genai.Client(api_key=gemini_api_key)
 
 log(f'Database is connected!')
