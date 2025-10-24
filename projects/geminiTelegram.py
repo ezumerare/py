@@ -63,7 +63,7 @@ async def create_handler(message: types.Message):
             user_id = message.from_user.id
 
         except aiosqlite.Error as e:
-            log(f'pidor : {e}')
+            log(f'{e}')
     
         search = await dat.require_message_data(user_id)
         
@@ -108,7 +108,7 @@ async def gemini_handler(message: types.Message):
         
             await dat.connect.close()
         except aiosqlite.Error as e:
-            log(f'error - уидфт {e}')
+            log(f'error - {e}')
 
 # bot listening to all requests
 async def main():
