@@ -16,7 +16,7 @@ def save(address, key):
     connect.commit()
     
 def generate():
-    for _ in range(50):
+    for i in range(50):
         account = web3.eth.account.create()
         address = account.address
         key = account.key.hex()
