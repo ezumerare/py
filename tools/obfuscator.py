@@ -36,7 +36,5 @@ def renaming(content, rename):
             file.write(data)
         print(new_txt)
             
-
-        
 contract_text = search()
 renaming(contract_text, rename)
